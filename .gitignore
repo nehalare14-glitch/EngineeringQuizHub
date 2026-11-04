@@ -1,0 +1,56 @@
+﻿# Environment variables
+.env
+.env.*
+!.env.example
+
+# Firebase private credentials
+*firebase-adminsdk*.json
+*serviceAccount*.json
+*service-account*.json
+FirebaseCredentials/
+
+# Dependencies
+node_modules/
+.next/
+
+# Java build
+target/
+*.class
+
+# IDE files
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local backups
+*.bak
+*.backup
+*.before-*.bak
+
+# Private keys and credentials
+*.pem
+*.p12
+*.pfx
+*-firebase-adminsdk-*.json
+
+# Additional development backups
+*.backup-*
+*.bak.*
+*.before-*
+*.error-backup
+*.score-backup
+*.navigation.bak.tsx
+*.sidebar.bak.tsx
+
+# Extra backup files
+*.backup.txt
+*.backup.csv
+*.before*.csv
+*.csv.repair-backup
+*_backup*.csv
