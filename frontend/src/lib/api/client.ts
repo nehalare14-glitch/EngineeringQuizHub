@@ -2,7 +2,7 @@
 import { auth } from "@/lib/firebase/config";
 
 const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8081";
+  process.env.NEXT_PUBLIC_API_URL ?? "https://engineeringquizhub.onrender.com";
 
 export async function apiFetch<T>(
   endpoint: string,
@@ -39,7 +39,7 @@ export async function apiFetch<T>(
     });
   } catch {
     throw new Error(
-      "Cannot connect to the backend. Check that Spring Boot is running on port 8081."
+      "Cannot connect to the backend. Check the API URL, network connection, and browser console for CORS errors."
     );
   }
 
