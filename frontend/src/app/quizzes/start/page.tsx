@@ -164,7 +164,7 @@ function QuizContent() {
           href="/quizzes"
           className="text-sm font-semibold text-[#007c70]"
         >
-          â† Back to Quizzes
+          Back to Quizzes
         </Link>
 
         <section className="mt-6 rounded-3xl bg-[#007c70] p-7 text-white">
@@ -300,20 +300,20 @@ function QuizContent() {
                   .map((item) => (
                     <article key={`${item.questionId}-${item.index}`} className="rounded-2xl border bg-white p-6">
                       <p className={`text-sm font-bold ${item.isCorrect ? "text-green-700" : "text-red-600"}`}>
-                        Question {item.index + 1} â€” {item.isCorrect ? "Correct" : "Incorrect"}
+                        Question {item.index + 1} - {item.isCorrect ? "Correct" : "Incorrect"}
                       </p>
                       <h3 className="mt-2 font-bold">{item.questionText}</h3>
                       <div className="mt-4 space-y-2">
                         {Object.entries(item.options).map(([key, value]) => (
                           <div key={key} className={`rounded-xl border p-3 ${key === item.correctOption ? "border-green-500 bg-green-50" : key === item.selectedOption ? "border-red-400 bg-red-50" : "border-slate-200"}`}>
                             <span>{key}. {value}</span>
-                            {key === item.correctOption && <span className="ml-2 font-bold text-green-700">âœ“ Correct answer</span>}
+                            {key === item.correctOption && <span className="ml-2 font-bold text-green-700"> Correct answer</span>}
                             {key === item.selectedOption && <span className="ml-2 text-sm font-semibold">(Your answer)</span>}
                           </div>
                         ))}
                       </div>
-                      <p className="mt-3 text-sm">Your answer: <strong>{item.selectedOption} â€” {item.options[item.selectedOption] ?? ""}</strong></p>
-                      <p className="mt-1 text-sm text-green-700">Correct answer: <strong>{item.correctOption} â€” {item.options[item.correctOption] ?? ""}</strong></p>
+                      <p className="mt-3 text-sm">Your answer: <strong>{item.selectedOption} - {item.options[item.selectedOption] ?? ""}</strong></p>
+                      <p className="mt-1 text-sm text-green-700">Correct answer: <strong>{item.correctOption} - {item.options[item.correctOption] ?? ""}</strong></p>
                       {item.explanation && <p className="mt-3 rounded-xl bg-slate-50 p-3 text-sm"><strong>Explanation:</strong> {item.explanation}</p>}
                     </article>
                   ))}

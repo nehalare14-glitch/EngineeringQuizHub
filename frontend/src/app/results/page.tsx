@@ -199,8 +199,8 @@ export default function ResultsPage() {
 
   const stats = [
     { label: "Quizzes Completed", value: String(attempts), icon: ClipboardList, hint: "Total attempts" },
-    { label: "Average Score", value: average === null ? "â€”" : `${average}%`, icon: Target, hint: "Across completed quizzes" },
-    { label: "Best Score", value: best === null ? "â€”" : `${best}%`, icon: Trophy, hint: "Your personal best" },
+    { label: "Average Score", value: average === null ? "-" : `${average}%`, icon: Target, hint: "Across completed quizzes" },
+    { label: "Best Score", value: best === null ? "-" : `${best}%`, icon: Trophy, hint: "Your personal best" },
     { label: "Correct Answers", value: String(totalCorrect), icon: TrendingUp, hint: "Across all attempts" },
   ];
 
@@ -400,7 +400,7 @@ export default function ResultsPage() {
             <div className="mt-6 space-y-3">
               {filteredResults.map((result) => (
                 <article key={result.id} className="flex flex-col gap-3 rounded-xl border border-[#e2ebe8] p-4 sm:flex-row sm:items-center sm:justify-between">
-                  <div><h3 className="font-semibold">{result.title}</h3><p className="mt-1 text-sm text-[#64748b]">{result.subject} Â· {new Date(result.completedAt).toLocaleDateString()}</p></div>
+                  <div><h3 className="font-semibold">{result.title}</h3><p className="mt-1 text-sm text-[#64748b]">{result.subject} - {new Date(result.completedAt).toLocaleDateString()}</p></div>
                   <span className="font-bold text-[#007c70]">{Math.round((result.correct / result.total) * 100)}%</span>
                 </article>
               ))}

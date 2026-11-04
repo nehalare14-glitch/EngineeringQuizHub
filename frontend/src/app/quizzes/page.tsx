@@ -238,7 +238,7 @@ export default function QuizzesPage() {
           <section aria-labelledby="subjects-heading" className="rounded-3xl border border-[#cce9e2] bg-white p-6 sm:p-8">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-[#007c70]">Selected branch Â· {activeBranch.shortName}</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-[#007c70]">Selected branch - {activeBranch.shortName}</p>
                 <h2 id="subjects-heading" className="mt-2 text-2xl font-bold">Explore subjects</h2>
                 <p className="mt-2 text-sm text-[#64748b]">Choose a subject to begin your quiz.</p>
               </div>

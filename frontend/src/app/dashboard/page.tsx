@@ -628,7 +628,7 @@ export default function Dashboard() {
       </div>
 
       <footer className="mt-10 border-t border-[#e2ebe8] bg-white px-5 py-7 text-center text-sm text-[#64748b]">
-        EngineeringQuizHub â€” Your knowledge, your progress.
+        EngineeringQuizHub - Your knowledge, your progress.
       </footer>
     </main>
   );
