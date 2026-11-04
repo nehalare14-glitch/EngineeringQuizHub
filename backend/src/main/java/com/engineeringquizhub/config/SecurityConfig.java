@@ -28,6 +28,7 @@ public class SecurityConfig {
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .dispatcherTypeMatchers(DispatcherType.ERROR).permitAll()
+                .requestMatchers(HttpMethod.GET, "/").permitAll()
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .requestMatchers(
                     HttpMethod.GET,
@@ -54,7 +55,8 @@ public class SecurityConfig {
 
         config.setAllowedOrigins(List.of(
             "http://localhost:3000",
-            "http://localhost:3001"
+            "http://localhost:3001",
+            "https://engineeringquizhub.vercel.app"
         ));
 
         config.setAllowedMethods(List.of(
