@@ -1,4 +1,4 @@
-﻿# EngineeringQuizHub
+# EngineeringQuizHub
 
 EngineeringQuizHub is a responsive, web-based engineering quiz application designed to help engineering students improve their technical knowledge through branch-wise quizzes, difficulty-based assessments, and performance analysis.
 
