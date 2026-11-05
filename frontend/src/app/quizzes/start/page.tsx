@@ -46,7 +46,7 @@ function shuffleItems<T>(items: readonly T[]): T[] {
 function randomizeQuestions(items: Question[]): Question[] {
   return shuffleItems(items).map((question) => ({
     ...question,
-    options: Object.fromEntries(shuffleItems(Object.entries(question.options))),
+    options: Object.fromEntries(Object.entries(question.options).sort(([a], [b]) => a.localeCompare(b))),
   }));
 }
 
@@ -225,7 +225,7 @@ function QuizContent() {
                 </h2>
 
                 <div className="mt-4 space-y-3">
-                  {Object.entries(question.options).map(([key, value]) => (
+                  {Object.entries(question.options).sort(([a], [b]) => a.localeCompare(b)).map(([key, value]) => (
                     <label
                       key={key}
                       className="flex cursor-pointer items-center gap-3 rounded-xl border border-[#e2ebe8] p-3"
@@ -304,7 +304,7 @@ function QuizContent() {
                       </p>
                       <h3 className="mt-2 font-bold">{item.questionText}</h3>
                       <div className="mt-4 space-y-2">
-                        {Object.entries(item.options).map(([key, value]) => (
+                        {Object.entries(item.options).sort(([a], [b]) => a.localeCompare(b)).map(([key, value]) => (
                           <div key={key} className={`rounded-xl border p-3 ${key === item.correctOption ? "border-green-500 bg-green-50" : key === item.selectedOption ? "border-red-400 bg-red-50" : "border-slate-200"}`}>
                             <span>{key}. {value}</span>
                             {key === item.correctOption && <span className="ml-2 font-bold text-green-700"> Correct answer</span>}
